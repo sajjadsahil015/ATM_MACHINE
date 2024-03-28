@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 import inquirer from "inquirer";
 let myBalance = 10000;
 let myPin = 1234;
@@ -25,21 +26,15 @@ if (pinAns.pinNumber === myPin) {
         });
         if (amountAns.amount === "1000") {
             myBalance -= 1000;
-            //console.log("Your remaining balance is: " + myBalance); you can also use this single line instead of below two lines
-            let newBalance = `${"Your remaining balance is: " + myBalance}`;
-            console.log(newBalance);
+            console.log(`Your remaining balance is: ${myBalance}`);
         }
         else if (amountAns.amount === "5000") {
             myBalance -= 5000;
-            //console.log("Your remaining balance is: " + myBalance); you can also use this single line instead of below two lines
-            let newBalance = `${"Your remaining balance is: " + myBalance}`;
-            console.log(newBalance);
+            console.log(`Your remaining balance is: ${myBalance}`);
         }
         else if (amountAns.amount === "10000") {
             myBalance -= 10000;
-            //console.log("Your remaining balance is: " + myBalance); you can also use this single line instead of below two lines
-            let newBalance = `${"Your remaining balance is: " + myBalance}`;
-            console.log(newBalance);
+            console.log(`Your remaining balance is: ${myBalance}`);
         }
         else if (amountAns.amount === "Other Amount") {
             let otherAmount = await inquirer.prompt({
@@ -49,9 +44,7 @@ if (pinAns.pinNumber === myPin) {
             });
             if (otherAmount.manualAmount <= myBalance) {
                 myBalance -= otherAmount.manualAmount;
-                //console.log("Your remaining balance is: " + myBalance); you can also use this single line instead of below two lines
-                let newBalance = `${"Your remaining balance is: " + myBalance}`;
-                console.log(newBalance);
+                console.log(`Your remaining balance is: ${myBalance}`);
             }
             else if (otherAmount.manualAmount > myBalance) {
                 console.log("Insufficient Amount");
